@@ -30,6 +30,8 @@ namespace TransitCapacityMultiplier
             SubwaySlider = 1f;
             TramSlider = 1f;
             TrainSlider = 1f;
+            AirplaneSlider = 1f;
+            ShipSlider = 1f;
         }
 
         public override void Apply()
@@ -58,6 +60,14 @@ namespace TransitCapacityMultiplier
         [SettingsUISlider(min = 0.1f, max = 5f, step = 0.1f, scalarMultiplier = 1, unit = Unit.kFloatSingleFraction)]
         [SettingsUISection(CapacitySection, CapacityGroup)]
         public float SubwaySlider { get; set; }
+
+        [SettingsUISlider(min = 0.1f, max = 5f, step = 0.1f, scalarMultiplier = 1, unit = Unit.kFloatSingleFraction)]
+        [SettingsUISection(CapacitySection, CapacityGroup)]
+        public float AirplaneSlider { get; set; }
+
+        [SettingsUISlider(min = 0.1f, max = 5f, step = 0.1f, scalarMultiplier = 1, unit = Unit.kFloatSingleFraction)]
+        [SettingsUISection(CapacitySection, CapacityGroup)]
+        public float ShipSlider { get; set; }
     }
 
     public class LocaleEN : IDictionarySource
@@ -80,12 +90,16 @@ namespace TransitCapacityMultiplier
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.SubwaySlider)), "Subway" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TramSlider)), "Tram" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.TrainSlider)), "Train" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.AirplaneSlider)), "Airplane" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ShipSlider)), "Ship" },
 
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.BusSlider)), "Set the vehicle capacity of bus vehicles relative to their vanilla capacity." },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TaxiSlider)), "Set the vehicle capacity of taxi vehicles relative to their vanilla capacity." },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.SubwaySlider)), "Set the vehicle capacity of subway vehicles relative to their vanilla capacity." },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TramSlider)), "Set the vehicle capacity of tram vehicles relative to their vanilla capacity." },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.TrainSlider)), "Set the vehicle capacity of train vehicles relative to their vanilla capacity." },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.AirplaneSlider)), "Set the vehicle capacity of airplane vehicles relative to their vanilla capacity." },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.ShipSlider)), "Set the vehicle capacity of ship vehicles relative to their vanilla capacity." },
             };
         }
 
